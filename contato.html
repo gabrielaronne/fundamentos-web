@@ -38,10 +38,11 @@
 
                 <br>
                 <label for="assunto">assunto:</label> <br>
-                <textarea name="assunto" id="assunto" cols="60" rows="5"></textarea>
+                <textarea name="assunto" id="assunto" cols="60" rows="5" onkeyup="validaAssunto()"></textarea>
+                <div id="txtAssunto"></div>
                 <br>
 
-                <button>Enviar</button>
+                <button onclick="enviar()">Enviar</button>
             </form>
 
 
@@ -52,9 +53,13 @@
             <h2>Informacoes</h2>
             <p>Av jose vicente aiello</p>
             <p>Bauru - SP</p>
+
+            
             <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14760.842414900124!2d-49.07776700323737!3d-22.34567537049198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bf671c89667ef7%3A0xaf8102a200a2f1b2!2sAv.%20Jos%C3%A9%20V.%20Aiello%2C%20110%20-%20Vila%20Serrao%2C%20Bauru%20-%20SP!5e0!3m2!1sen!2sbr!4v1618590797484!5m2!1sen!2sbr"
-                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14760.842414900124!2d-49.07776700323737!
+                3d-22.34567537049198!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bf671c89667ef7%3A0xaf8102a200a2f1b2!2sAv.%20Jos%C3%A9%20V.%20Aiello%2C%20110%20-%20Vila%20Serrao%2C%
+                20Bauru%20-%20SP!5e0!3m2!1sen!2sbr!4v1618590797484!5m2!1sen!2sbr"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"onmousemove="mapaZoom()"onmouseout="mapaNormal()"id='mapa'></iframe>
         </div>
 
 

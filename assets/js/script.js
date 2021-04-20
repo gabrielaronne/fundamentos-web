@@ -16,6 +16,10 @@ querySelector()
 let nome = window.document.getElementById('nome')
 let email = document.querySelector("#email")
 let assunto = document.querySelector("#assunto")
+let nomeOk = false
+let emailOk = false
+let assuntoOk = false
+let mapa = document.querySelector('#mapa')
 
 nome.style.width = '100%'
 email.style.width = '100%'
@@ -27,26 +31,61 @@ function validaNome() {
         txtNome.style.color = 'red'
     }
     else {
-        txt.innerHTML = "nome valido"
+        txtNome.innerHTML = "nome valido"
         txtNome.style.color = 'green'
+        nomeOk = true
     }
 
 
 }
-function validaEmail(){
+function validaEmail() {
     let txtEmail = document.querySelector("#txtEmail")
 
-    if(email.value.indexOf('@')==-1 || email.value.indexOf('.')== -1){
-        txtEmail.innerHTML="email invalido"
+    if (email.value.indexOf('@') == -1 || email.value.indexOf('.') == -1) {
+        txtEmail.innerHTML = "email invalido"
         txtEmail.style.color = 'red'
-           
+
     }
-    else{ 
-        txtEmail.innerHTML="email valido"
+    else {
+        txtEmail.innerHTML = "email valido"
         txtEmail.style.color = 'green'
+        emailOk = true
 
     }
+}
+function validaAssunto() {
+    let txtAssunto = document.querySelector('#txtAssunto')
 
-    
+    if (assunto.value.length >= 100) {
+        txtAssunto.innerHTML = "o texto e muito grande, maximo 100 caracteres"
+        txtAssunto.style.color = 'red'
+        txtAssunto.style.display = "block"
+    }
+    else {
+        txtAssunto.style.display = "none"
+        assuntoOk = true
 
+
+    }
+}
+
+function enviar() {
+
+    if (nomeOk == true && emailOk == true && assuntoOk == true) {
+        alert("formulario enviado com sucesso!")
+    }
+    else {
+
+        alert("formulario nao enviado, preencha corretamente")
+    }
+    function mapaZoom(){
+  mapa.style.width="800px"
+  mapa.style.height="600px"
+}
+
+ function mapaNormal(){
+mapa.style.width="600px"
+mapa.style.height="450px"
+
+ }
 }
